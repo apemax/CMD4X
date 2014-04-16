@@ -22,16 +22,8 @@
 #include <string>
 using namespace std;
 
-#ifndef GLOBAL_H
-#define GLOBAL_H
-
-extern string username;
-extern string Firstrun;
-extern string GVT1;
-extern string GVT2;
-extern string GVT3;
-
-void options();
-void opt1();
-
-#endif // GLOBAL_H
+string username;
+string Firstrun = "true";
+string GVT1;
+string GVT2;
+string GVT3;
