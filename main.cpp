@@ -16,7 +16,7 @@
 */
 // Copyright (C) 2014 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.1
+// version: 0.0.2
 // CMD4X
 
 #include <iostream>
@@ -30,6 +30,8 @@ int main()
     int Mopt;
     string Mainloop = "running";
 
+    setoptions();
+
     cout << "Welcome to CMD4X." << endl;
 
     if(Firstrun == "true")
@@ -39,7 +41,7 @@ int main()
         cout << ">";
         cin >> username;
 
-        Firstrun = "false";
+        //Firstrun = "false";
     }
 
     while(Mainloop == "running")
@@ -71,7 +73,9 @@ int main()
                 {
                     cout << "It works!" << endl;
 
-                    options();
+                    //setoptions();
+
+                    cout << "username: " << username << endl;
 
                     break;
                 }

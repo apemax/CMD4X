@@ -16,7 +16,7 @@
 */
 // Copyright (C) 2014 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.1
+// version: 0.0.2
 // CMD4X
 
 #include <iostream>
@@ -31,21 +31,21 @@ string File_contents;
 
 ifstream cfg_file("options.cfg", ios::in);
 
-void options()
+void setoptions()
 {
-    cout << "Starting CFG File Function..." << endl;
+    //cout << "Starting CFG File Function..." << endl;
 
-    cout << "Opening CFG file... ";
+    cout << "Loading options from file... " << endl;
 
     if (cfg_file.is_open()) //Checks to see if it can open the file.
     {
-        cout << "Done." << endl;
+        //cout << "Done." << endl;
 
-        cout << "Getting the line from the file..." << endl;
+        //cout << "Getting the line from the file..." << endl;
 
         opt1();
 
-        cout << "Closing file..." << endl;
+        //cout << "Closing file..." << endl;
 
         cfg_file.close(); //Closes the file stream.
     }
@@ -58,59 +58,67 @@ void opt1()
     {
         int n = 0;
 
-        cout << "Getting file contents..." << endl;
+        //cout << "Getting file contents..." << endl;
 
         getline(cfg_file, File_contents);
 
-        cout << "Loaded line from file" << endl;
+        //cout << "Loaded line from file" << endl;
 
-        cout << File_contents.substr(0, 8) << endl;
+        //cout << File_contents.substr(0, 8) << endl;
 
-        if(File_contents.substr(0, 8) == "username")
+        if(File_contents.substr(0, 8) == "firstrun")
         {
-            cout << "setting n to 1" << endl;
+            //cout << "setting n to 1" << endl;
 
             n = 1;
         }
 
-        if(File_contents.substr(0, 8) == "firstrun")
+        if(File_contents.substr(0, 8) == "username")
         {
-            cout << "Setting n to 2" << endl;
+            //cout << "Setting n to 2" << endl;
 
             n = 2;
         }
 
         if(File_contents.substr(0, 4) == "GVT3")
         {
-            cout << "Setting n to 3" << endl;
+            //cout << "Setting n to 3" << endl;
 
             n = 3;
         }
 
-        cout << n << endl;
+        //cout << n << endl;
 
         switch(n)
         {
             case 1:
             {
-                cout << "Contents of GVT1" << endl;
+                cout << "Checking Firstrun status..." << endl;
 
-                cout << File_contents << endl;
+                //cout << File_contents << endl;
 
-                string T1 = File_contents.substr(9, 20);
+                string T1 = File_contents.substr(9, 15);
 
-                GVT1 = GVT1 + T1;
+                Firstrun.clear();
+
+                Firstrun = Firstrun + T1;
+
+                cout << "Firstrun status is " << Firstrun << endl;
 
                 break;
             }
 
             case 2:
             {
-                cout << File_contents << endl;
+                cout << "Loading username from options file..." << endl;
 
-                string T2 = File_contents.substr(9, 10);
+                //cout << File_contents << endl;
 
-                GVT2 = GVT2 + T2;
+                string T2 = File_contents.substr(9, 20);
+
+                username = username + T2;
+
+                cout << "Username set to " << username << endl;
 
                 break;
             }
@@ -128,9 +136,9 @@ void opt1()
 
             default:
             {
-                cout << "exiting..." << endl;
+                cout << "finishing up..." << endl;
 
-                exit(0);
+                //exit(0);
 
                 break;
             }

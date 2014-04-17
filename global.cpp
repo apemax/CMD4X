@@ -16,7 +16,7 @@
 */
 // Copyright (C) 2014 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.1
+// version: 0.0.2
 // CMD4X
 
 #include <string>
@@ -24,6 +24,6 @@ using namespace std;
 
 string username;
 string Firstrun = "true";
-string GVT1;
+//string GVT1;
 string GVT2;
 string GVT3;
