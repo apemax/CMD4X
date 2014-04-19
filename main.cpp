@@ -16,10 +16,11 @@
 */
 // Copyright (C) 2014 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.2
+// version: 0.0.3
 // CMD4X
 
 #include <iostream>
+#include <fstream>
 #include <stdlib.h>
 #include <string>
 #include "global.h"
@@ -58,7 +59,15 @@ int main()
         {
             case 1:
                 {
-                    cout << "It works!" << endl;
+                    cout << "Please enter a name for this game:" << endl;
+
+                    cout << ">";
+
+                    cin >> Gamename;
+
+                    ofstream Savefile(Gamename.c_str(), ios::out | ios::app);
+
+                    Savefile.close();
 
                     break;
                 }
@@ -72,8 +81,6 @@ int main()
             case 3:
                 {
                     cout << "It works!" << endl;
-
-                    //setoptions();
 
                     cout << "username: " << username << endl;
 

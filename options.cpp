@@ -16,7 +16,7 @@
 */
 // Copyright (C) 2014 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.2
+// version: 0.0.3
 // CMD4X
 
 #include <iostream>
@@ -33,21 +33,13 @@ ifstream cfg_file("options.cfg", ios::in);
 
 void setoptions()
 {
-    //cout << "Starting CFG File Function..." << endl;
-
     cout << "Loading options from file... " << endl;
 
     if (cfg_file.is_open()) //Checks to see if it can open the file.
     {
-        //cout << "Done." << endl;
-
-        //cout << "Getting the line from the file..." << endl;
-
         opt1();
 
-        //cout << "Closing file..." << endl;
-
-        cfg_file.close(); //Closes the file stream.
+        cfg_file.close();
     }
     else cout << "Can't open file." << endl;
 }
@@ -58,36 +50,22 @@ void opt1()
     {
         int n = 0;
 
-        //cout << "Getting file contents..." << endl;
-
         getline(cfg_file, File_contents);
-
-        //cout << "Loaded line from file" << endl;
-
-        //cout << File_contents.substr(0, 8) << endl;
 
         if(File_contents.substr(0, 8) == "firstrun")
         {
-            //cout << "setting n to 1" << endl;
-
             n = 1;
         }
 
         if(File_contents.substr(0, 8) == "username")
         {
-            //cout << "Setting n to 2" << endl;
-
             n = 2;
         }
 
         if(File_contents.substr(0, 4) == "GVT3")
         {
-            //cout << "Setting n to 3" << endl;
-
             n = 3;
         }
-
-        //cout << n << endl;
 
         switch(n)
         {
@@ -95,7 +73,6 @@ void opt1()
             {
                 cout << "Checking Firstrun status..." << endl;
 
-                //cout << File_contents << endl;
 
                 string T1 = File_contents.substr(9, 15);
 
@@ -112,7 +89,6 @@ void opt1()
             {
                 cout << "Loading username from options file..." << endl;
 
-                //cout << File_contents << endl;
 
                 string T2 = File_contents.substr(9, 20);
 
@@ -137,8 +113,6 @@ void opt1()
             default:
             {
                 cout << "finishing up..." << endl;
-
-                //exit(0);
 
                 break;
             }

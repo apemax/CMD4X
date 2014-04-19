@@ -16,7 +16,7 @@
 */
 // Copyright (C) 2014 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.2
+// version: 0.0.3
 // CMD4X
 
 #include <string>
@@ -27,8 +27,7 @@ using namespace std;
 
 extern string username;
 extern string Firstrun;
-//extern string GVT1;
-extern string GVT2;
+extern string Gamename;
 extern string GVT3;
 
 void setoptions();
