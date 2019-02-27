@@ -14,16 +14,10 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 Peter Wright
+// Copyright (C) 2014 - 2019 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.3
 // CMD4X
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <stdlib.h>
 #include "global.h"
 using namespace std;
 
@@ -31,7 +25,7 @@ string File_contents;
 
 ifstream cfg_file("options.cfg", ios::in);
 
-void setoptions()
+void loadoptions()
 {
     cout << "Loading options from file... " << endl;
 

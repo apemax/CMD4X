@@ -14,15 +14,10 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 Peter Wright
+// Copyright (C) 2014 - 2019 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.3
 // CMD4X
 
-#include <iostream>
-#include <fstream>
-#include <stdlib.h>
-#include <string>
 #include "global.h"
 using namespace std;
 
@@ -31,7 +26,7 @@ int main()
     int Mopt;
     string Mainloop = "running";
 
-    setoptions();
+    loadoptions();
 
     cout << "Welcome to CMD4X." << endl;
 
@@ -59,7 +54,7 @@ int main()
         {
             case 1:
                 {
-                    cout << "Please enter a name for this game:" << endl;
+                    cout << "Please enter a save name for this game:" << endl;
 
                     cout << ">";
 
@@ -69,12 +64,14 @@ int main()
 
                     Savefile.close();
 
+                    gameloop();
+
                     break;
                 }
 
             case 2:
                 {
-                    cout << "It works!" << endl;
+                    load();
 
                     break;
                 }

@@ -19,9 +19,8 @@
 // CMD4X
 
 #include "global.h"
-using namespace std;
 
-string username;
-string Firstrun = "true";
-string Gamename;
-string GVT3;
+void load()
+{
+    cout << "Loading game..." << endl;
+}

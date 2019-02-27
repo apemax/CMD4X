@@ -14,11 +14,14 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 Peter Wright
+// Copyright (C) 2014 - 2019 Peter Wright
 // author: Peter (apemax) Wright
-// version: 0.0.3
 // CMD4X
 
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <stdlib.h>
 #include <string>
 using namespace std;
 
@@ -30,7 +33,10 @@ extern string Firstrun;
 extern string Gamename;
 extern string GVT3;
 
-void setoptions();
+void loadoptions();
 void opt1();
+void gameloop();
+void save();
+void load();
 
 #endif // GLOBAL_H
