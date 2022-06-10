@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2019 Peter Wright
+// Copyright (C) 2014 - 2022 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
@@ -24,7 +24,7 @@ using namespace std;
 int main()
 {
     int Mopt;
-    string Mainloop = "running";
+    bool Mainloop = true;
 
     loadoptions();
 
@@ -40,7 +40,7 @@ int main()
         //Firstrun = "false";
     }
 
-    while(Mainloop == "running")
+    while(Mainloop == true)
     {
         cout << "1) New Game." << endl;
         cout << "2) Load Game." << endl;
@@ -87,7 +87,7 @@ int main()
                 {
                     cout << "Exiting..." << endl;
 
-                    Mainloop = "Stopped";
+                    Mainloop = false;
                 }
         }
 

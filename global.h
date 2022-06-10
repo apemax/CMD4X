@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2019 Peter Wright
+// Copyright (C) 2014 - 2022 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 

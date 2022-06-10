@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2019 Peter Wright
+// Copyright (C) 2014 - 2022 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
@@ -22,8 +22,8 @@
 
 void gameloop()
 {
-    string Sgameloop = "running";
-    string Soptionsloop = "running";
+    bool Sgameloop = true;
+    bool Soptionsloop = true;
     int Gopt1;
     int Oopt1;
 
@@ -31,7 +31,7 @@ void gameloop()
 
     cout << "To save/load, get to the options menu or exit type in 7 on the main menu" << endl;
 
-    while (Sgameloop == "running")
+    while (Sgameloop == true)
     {
 
         cout << "1) Offensive." << endl;
@@ -91,9 +91,9 @@ void gameloop()
                 {
                     cout << "Options menu." << endl;
 
-                    Soptionsloop = "running";
+                    Soptionsloop = true;
 
-                    while (Soptionsloop == "running")
+                    while (Soptionsloop == true)
                     {
                         cout << "1) Save/Load." << endl;
                         cout << "2) Settings." << endl;
@@ -121,16 +121,16 @@ void gameloop()
 
                         case 3:
                             {
-                                Soptionsloop = "stopped";
+                                Soptionsloop = false;
 
                                 break;
                             }
 
                         case 4:
                             {
-                                Soptionsloop = "stopped";
+                                Soptionsloop = false;
 
-                                Sgameloop = "stopped";
+                                Sgameloop = false;
 
                                 break;
                             }
