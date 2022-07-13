@@ -23,74 +23,63 @@ using namespace std;
 
 int main()
 {
-    int Mopt;
-    bool Mainloop = true;
+  string Mopt;
+  bool Mainloop = true;
 
-    loadoptions();
+  loadoptions();
 
-    cout << "Welcome to CMD4X." << endl;
+  cout << "Welcome to CMD4X." << endl;
 
-    if(Firstrun == "true")
-    {
-        cout << "Please enter a username:" << endl;
+  if(Firstrun == "true")
+  {
+    cout << "Please enter a username:" << endl;
 
-        cout << ">";
-        cin >> username;
+    cout << "> ";
+    cin >> username;
 
-        //Firstrun = "false";
-    }
+    Firstrun = "false";
+  }
 
-    while(Mainloop == true)
-    {
-        cout << "1) New Game." << endl;
-        cout << "2) Load Game." << endl;
-        cout << "3) Options." << endl;
-        cout << "4) Exit." << endl;
+  while(Mainloop == true)
+  {
+    cout << "new - Start a new game." << endl;
+    cout << "load - Load a saved game." << endl;
+    cout << "options - Open the options menu." << endl;
+    cout << "exit - Exit the game." << endl;
+    cout << "> ";
+    cin >> Mopt;
 
-        cout << ">";
-        cin >> Mopt;
+    if (Mopt == "new")
+      {
+        cout << "Please enter a save name for this game:" << endl;
+        cout << "> ";
+        cin >> Gamename;
 
-        switch(Mopt)
-        {
-            case 1:
-                {
-                    cout << "Please enter a save name for this game:" << endl;
+        ofstream Savefile(Gamename, ios::out | ios::app);
 
-                    cout << ">";
+        Savefile.close();
 
-                    cin >> Gamename;
+        gameloop();
 
-                    ofstream Savefile(Gamename.c_str(), ios::out | ios::app);
+        break;
+      }
+    else if(Mopt == "load")
+      {
+        load();
 
-                    Savefile.close();
+        break;
+      }
+    else if(Mopt == "options")
+      {
+        cout << "username: " << username << endl;
 
-                    gameloop();
+        break;
+      }
+    else if (Mopt == "exit")
+      {
+        cout << "Exiting..." << endl;
 
-                    break;
-                }
-
-            case 2:
-                {
-                    load();
-
-                    break;
-                }
-            case 3:
-                {
-                    cout << "It works!" << endl;
-
-                    cout << "username: " << username << endl;
-
-                    break;
-                }
-            case 4:
-                {
-                    cout << "Exiting..." << endl;
-
-                    Mainloop = false;
-                }
-        }
-
-    }
-
+        Mainloop = false;
+      }
+  }
 }
