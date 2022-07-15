@@ -60,20 +60,14 @@ int main()
         Savefile.close();
 
         gameloop();
-
-        break;
       }
     else if(Mopt == "load")
       {
         load();
-
-        break;
       }
     else if(Mopt == "options")
       {
         cout << "username: " << username << endl;
-
-        break;
       }
     else if (Mopt == "exit")
       {
