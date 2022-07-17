@@ -22,124 +22,99 @@
 
 void gameloop()
 {
-    bool Sgameloop = true;
-    bool Soptionsloop = true;
-    int Gopt1;
-    int Oopt1;
+  bool Sgameloop = true;
+  bool Soptionsloop = true;
+  string Gopt1;
+  string Oopt1;
 
-    cout << "Starting game..." << endl;
+  cout << "Starting game..." << endl;
 
-    cout << "To save/load, get to the options menu or exit type in 7 on the main menu" << endl;
+  cout << "mil / military - Manage military." << endl;
+  cout << "dip / diplomacy - Manage diplomacy." << endl;
+  cout << "man / manufacturing - Manage manufacturing" << endl;
+  cout << "res / research - Manage Research." << endl;
+  cout << "map - View map." << endl;
+  cout << "sta / status - View status and progress overview." << endl;
+  cout << "opt / options - Go to the options menu." << endl;
 
-    while (Sgameloop == true)
-    {
+  while (Sgameloop == true)
+  {
+    cout << "> ";
+    cin >> Gopt1;
 
-        cout << "1) Offensive." << endl;
-        cout << "2) Defensive." << endl;
-        cout << "3) Diplomacy." << endl;
-        cout << "4) Factory." << endl;
-        cout << "5) Research" << endl;
-        cout << "6) Status" << endl;
+    if (Gopt1 == "mil" || Gopt1 == "military")
+      {
+        cout << "Test." << endl;
+      }
 
-        cin >> Gopt1;
+    else if (Gopt1 == "dip" || Gopt1 == "diplomacy")
+      {
+        cout << "Test." << endl;
+      }
+    else if (Gopt1 == "man" || Gopt1 == "manufacturing")
+      {
+        cout << "Test." << endl;
+      }
 
-        switch(Gopt1)
+    else if (Gopt1 == "res" || Gopt1 == "research")
+      {
+        cout << "Test." << endl;
+      }
+
+    else if (Gopt1 == "map" || Gopt1 == "map")
+      {
+        cout << "Test." << endl;
+      }
+
+    else if (Gopt1 == "sta" || Gopt1 == "status")
+      {
+        cout << "Test." << endl;
+      }
+
+    else if (Gopt1 == "opt" || Gopt1 == "options")
+      {
+        cout << "Options menu." << endl;
+
+        cout << "load - Load a saved game." << endl;
+        cout << "save - Save game." << endl;
+        cout << "set / settings - Go to settings menu." << endl;
+        cout << "back - Return to game." << endl;
+        cout << "exit - Exit the game." << endl;
+
+        Soptionsloop = true;
+
+        while (Soptionsloop == true)
         {
-            case 1:
-                {
-                    cout << "Test." << endl;
+          cout << "> ";
+          cin >> Oopt1;
 
-                    break;
-                }
+          if (Oopt1 == "load")
+            {
+              cout << "Load game..." << endl;
+            }
 
-            case 2:
-                {
-                    cout << "Test." << endl;
+          else if (Oopt1 == "save")
+            {
+              cout << "Save game..." << endl;
+            }
 
-                    break;
-                }
+          else if (Oopt1 == "set" || Gopt1 == "settings")
+            {
+              cout << "Some options go here..." << endl;
+            }
 
-            case 3:
-                {
-                    cout << "Test." << endl;
+          else if (Oopt1 == "back")
+            {
+              Soptionsloop = false;
+            }
 
-                    break;
-                }
+          else if (Oopt1 == "exit")
+            {
+              Soptionsloop = false;
 
-            case 4:
-                {
-                    cout << "Test." << endl;
-
-                    break;
-                }
-
-            case 5:
-                {
-                    cout << "Test." << endl;
-
-                    break;
-                }
-
-            case 6:
-                {
-                    cout << "Test." << endl;
-
-                    break;
-                }
-
-            case 7:
-                {
-                    cout << "Options menu." << endl;
-
-                    Soptionsloop = true;
-
-                    while (Soptionsloop == true)
-                    {
-                        cout << "1) Save/Load." << endl;
-                        cout << "2) Settings." << endl;
-                        cout << "3) Back to game." << endl;
-                        cout << "4) exit game." << endl;
-
-                        cin >> Oopt1;
-
-                        switch(Oopt1)
-                        {
-                        case 1:
-                            {
-                                cout << "1) Save game." << endl;
-                                cout << "2) Load game." << endl;
-
-                                break;
-                            }
-
-                        case 2:
-                            {
-                                cout << "Some options go here..." << endl;
-
-                                break;
-                            }
-
-                        case 3:
-                            {
-                                Soptionsloop = false;
-
-                                break;
-                            }
-
-                        case 4:
-                            {
-                                Soptionsloop = false;
-
-                                Sgameloop = false;
-
-                                break;
-                            }
-                        }
-                    }
-
-                    break;
-                }
+              Sgameloop = false;
+            }
         }
-
-    }
+      }
+  }
 }
