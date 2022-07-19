@@ -32,7 +32,7 @@ int main()
 
   cout << "Welcome to CMD4X." << endl;
 
-  while(Mainloop == true)
+  while (Mainloop == true)
   {
     cout << "new - Start a new game." << endl;
     cout << "load - Load a saved game." << endl;
@@ -58,29 +58,34 @@ int main()
 
         gameloop();
       }
-    else if(Mopt == "load")
+    else if (Mopt == "load")
       {
         load();
       }
-    else if(Mopt == "options")
+    else if (Mopt == "options")
       {
-        if(Debug == 1)
+        if (Debug == 1)
         {
           cout << "Debug options enabled. Type debug to enter debug menu." << endl;
         }
 
+        cout << "save - Save options to the config file." << endl;
         cout << "exit - Exit the options menu." << endl;
 
-        while(Optionsloop == true)
+        while (Optionsloop == true)
         {
           cout << "> ";
           cin >> Oopt;
 
-          if(Oopt == "debug")
+          if (Oopt == "save")
+          {
+            saveoptions();
+          }
+          else if (Oopt == "debug")
           {
             cout << "Debug menu." << endl;
           }
-          else if(Oopt == "exit")
+          else if (Oopt == "exit")
           {
             Optionsloop = false;
           }

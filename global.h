@@ -33,6 +33,7 @@ extern string Username;
 extern string Gamename;
 
 void loadoptions();
+void saveoptions();
 void opt1();
 void gameloop();
 void save();

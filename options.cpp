@@ -33,7 +33,7 @@ void loadoptions()
 
   if (cfg_file.is_open())
   {
-    for(; i < 2; i++)
+    for (; i < 2; i++)
     {
       getline(cfg_file, LoadLine);
 
@@ -53,5 +53,23 @@ void loadoptions()
   else
   {
     cout << "Failed to open file." << endl;
+  }
+}
+
+void saveoptions()
+{
+  ofstream cfg_file("options.cfg", ios::out | ios::trunc);
+
+  if (cfg_file.is_open())
+  {
+    cfg_file << "debug=" << Debug << endl;
+
+    cfg_file.close();
+
+    cout << "Options saved." << endl;
+  }
+  else
+  {
+    cout << "Failed to open config file." << endl;
   }
 }
