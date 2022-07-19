@@ -21,7 +21,6 @@
 #include "global.h"
 using namespace std;
 
-string username;
-string Firstrun = "true";
+int Debug = 0;
+string Username;
 string Gamename;
-string GVT3;

@@ -14,103 +14,44 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2019 Peter Wright
+// Copyright (C) 2014 - 2022 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
 #include "global.h"
 using namespace std;
 
-string File_contents;
-
-ifstream cfg_file("options.cfg", ios::in);
-
 void loadoptions()
 {
-    cout << "Loading options from file... " << endl;
+  string File_contents;
+  string LoadLine;
+  int i = 1;
 
-    if (cfg_file.is_open()) //Checks to see if it can open the file.
+  ifstream cfg_file("options.cfg", ios::in);
+
+  cout << "Loading options from file... " << endl;
+
+  if (cfg_file.is_open())
+  {
+    for(; i < 2; i++)
     {
-        opt1();
+      getline(cfg_file, LoadLine);
 
-        cfg_file.close();
+      switch(i)
+      {
+        case 1:
+        {
+          Debug = stoi(LoadLine.substr(6, 1));
+
+          break;
+        }
+      }
     }
-    else cout << "Can't open file." << endl;
-}
 
-void opt1()
-{
-    for(char i = 0; i < 3; i++)
-    {
-        int n = 0;
-
-        getline(cfg_file, File_contents);
-
-        if(File_contents.substr(0, 8) == "firstrun")
-        {
-            n = 1;
-        }
-
-        if(File_contents.substr(0, 8) == "username")
-        {
-            n = 2;
-        }
-
-        if(File_contents.substr(0, 4) == "GVT3")
-        {
-            n = 3;
-        }
-
-        switch(n)
-        {
-            case 1:
-            {
-                cout << "Checking Firstrun status..." << endl;
-
-
-                string T1 = File_contents.substr(9, 15);
-
-                Firstrun.clear();
-
-                Firstrun = Firstrun + T1;
-
-                cout << "Firstrun status is " << Firstrun << endl;
-
-                break;
-            }
-
-            case 2:
-            {
-                cout << "Loading username from options file..." << endl;
-
-
-                string T2 = File_contents.substr(9, 20);
-
-                username = username + T2;
-
-                cout << "Username set to " << username << endl;
-
-                break;
-            }
-
-            case 3:
-            {
-                cout << File_contents << endl;
-
-                char T3 = File_contents[5];
-
-                GVT3 = GVT3 + T3;
-
-                break;
-            }
-
-            default:
-            {
-                cout << "finishing up..." << endl;
-
-                break;
-            }
-        }
-
-    }
+    cfg_file.close();
+  }
+  else
+  {
+    cout << "Failed to open file." << endl;
+  }
 }

@@ -28,10 +28,9 @@ using namespace std;
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-extern string username;
-extern string Firstrun;
+extern int Debug;
+extern string Username;
 extern string Gamename;
-extern string GVT3;
 
 void loadoptions();
 void opt1();
