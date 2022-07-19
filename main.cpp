@@ -24,21 +24,13 @@ using namespace std;
 int main()
 {
   string Mopt;
+  string Oopt;
   bool Mainloop = true;
+  bool Optionsloop = true;
 
   loadoptions();
 
   cout << "Welcome to CMD4X." << endl;
-
-  if(Firstrun == "true")
-  {
-    cout << "Please enter a username:" << endl;
-
-    cout << "> ";
-    cin >> username;
-
-    Firstrun = "false";
-  }
 
   while(Mainloop == true)
   {
@@ -51,6 +43,11 @@ int main()
 
     if (Mopt == "new")
       {
+        cout << "Please enter a username:" << endl;
+
+        cout << "> ";
+        cin >> Username;
+
         cout << "Please enter a save name for this game:" << endl;
         cout << "> ";
         cin >> Gamename;
@@ -67,7 +64,27 @@ int main()
       }
     else if(Mopt == "options")
       {
-        cout << "username: " << username << endl;
+        if(Debug == 1)
+        {
+          cout << "Debug options enabled. Type debug to enter debug menu." << endl;
+        }
+
+        cout << "exit - Exit the options menu." << endl;
+
+        while(Optionsloop == true)
+        {
+          cout << "> ";
+          cin >> Oopt;
+
+          if(Oopt == "debug")
+          {
+            cout << "Debug menu." << endl;
+          }
+          else if(Oopt == "exit")
+          {
+            Optionsloop = false;
+          }
+        }
       }
     else if (Mopt == "exit")
       {
