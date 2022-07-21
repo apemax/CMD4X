@@ -36,7 +36,7 @@ void loadoptions();
 void saveoptions();
 void opt1();
 void gameloop();
-void save();
+void save(string SaveFileName);
 void load();
 
 #endif // GLOBAL_H

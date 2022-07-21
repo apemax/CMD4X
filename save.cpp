@@ -14,13 +14,24 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2019 Peter Wright
+// Copyright (C) 2014 - 2022 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
 #include "global.h"
 
-void save()
+void save(string SaveFileName)
 {
-    cout << "Saving game..." << endl;
+  ofstream Savefile(SaveFileName, ios::out | ios::trunc);
+
+  if (Savefile.is_open())
+  {
+    Savefile << Username << endl;
+
+    Savefile.close();
+  }
+  else
+  {
+    cout << "Error: Unable to save to save game file." << endl;
+  }
 }

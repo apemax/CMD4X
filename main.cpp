@@ -52,9 +52,7 @@ int main()
         cout << "> ";
         cin >> Gamename;
 
-        ofstream Savefile(Gamename, ios::out | ios::app);
-
-        Savefile.close();
+        save(Gamename);
 
         gameloop();
       }
@@ -81,6 +79,7 @@ int main()
           {
             saveoptions();
           }
+
           else if (Oopt == "debug")
           {
             cout << "Debug menu." << endl;
