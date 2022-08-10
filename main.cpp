@@ -58,7 +58,13 @@ int main()
       }
     else if (Mopt == "load")
       {
-        load();
+        cout << "Please enter the save file name you would like to load:" << endl;
+        cout << "> ";
+        cin >> Gamename;
+
+        load(Gamename);
+
+        gameloop();
       }
     else if (Mopt == "options")
       {
