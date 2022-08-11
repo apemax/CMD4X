@@ -29,7 +29,7 @@ void load(string SaveFileName)
 
   if (LoadFile.is_open())
   {
-    for (; LineNumber < 1; LineNumber++)
+    for (; LineNumber < 2; LineNumber++)
     {
       getline(LoadFile, LoadLine);
 
@@ -38,6 +38,14 @@ void load(string SaveFileName)
         case 1:
         {
           Username = LoadLine;
+
+          break;
+        }
+        case 2:
+        {
+          Turn = stoi(LoadLine);
+
+          break;
         }
       }
     }

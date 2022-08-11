@@ -22,5 +22,6 @@
 using namespace std;
 
 int Debug = 0;
+int Turn = 1;
 string Username;
 string Gamename;

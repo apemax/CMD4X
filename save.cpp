@@ -27,6 +27,7 @@ void save(string SaveFileName)
   if (Savefile.is_open())
   {
     Savefile << Username << endl;
+    Savefile << Turn << endl;
 
     Savefile.close();
   }

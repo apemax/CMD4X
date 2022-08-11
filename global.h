@@ -29,6 +29,7 @@ using namespace std;
 #define GLOBAL_H
 
 extern int Debug;
+extern int Turn;
 extern string Username;
 extern string Gamename;
 

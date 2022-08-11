@@ -36,6 +36,7 @@ void gameloop()
   cout << "map - View map." << endl;
   cout << "sta / status - View status and progress overview." << endl;
   cout << "opt / options - Go to the options menu." << endl;
+  cout << "end - End turn." <<endl;
 
   while (Sgameloop == true)
   {
@@ -116,5 +117,11 @@ void gameloop()
             }
         }
       }
+    else if (Gopt1 == "end")
+    {
+      cout << "Turn ended." << endl;
+
+      Turn++;
+    }
   }
 }
