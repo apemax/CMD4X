@@ -1,18 +1,22 @@
-CC = g++
-CXXFLAGS = -no-pie -Werror -Wall -Wextra
-DEPS = global.h
-
+SRC_DIR = src
 ODIR = obj
+IDIR = include
 BUILD_DIR = build
 
 BIN = cmd4x
+
+CC = g++
+CXXFLAGS = -I$(IDIR) -no-pie -Werror -Wall -Wextra
+
+_DEPS = global.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = main.o game.o global.o load.o options.o save.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 .SECONDEXPANSION:
 
-$(ODIR)/%.o: %.cpp $(DEPS) | $$(@D)
+$(ODIR)/%.o: $(SRC_DIR)/%.cpp $(DEPS) | $$(@D)
 	$(CC) -c -o $@ $< $(CXXFLAGS)
 
 $(BUILD_DIR)/$(BIN): $(OBJ) | $$(@D)
