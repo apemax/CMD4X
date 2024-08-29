@@ -14,30 +14,26 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2022 Peter Wright
+// Copyright (C) 2014 - 2024 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
 #include <iostream>
-#include <fstream>
 #include <sstream>
-#include <stdlib.h>
 #include <string>
-using namespace std;
 
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-extern int Debug;
-extern int Turn;
-extern string Username;
-extern string Gamename;
+extern int debug;
+extern int turn;
+extern std::string userName;
+extern std::string gameName;
 
-void loadoptions();
-void saveoptions();
-void opt1();
-void gameloop();
-void save(string SaveFileName);
-void load(string SaveFileName);
+void loadOptions();
+void saveOptions();
+void gameLoop();
+void save(std::string saveFileName);
+void load(std::string saveFileName);
 
 #endif // GLOBAL_H

@@ -14,93 +14,92 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2022 Peter Wright
+// Copyright (C) 2014 - 2024 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
 #include "global.h"
-using namespace std;
 
 int main()
 {
-  string Mopt;
-  string Oopt;
-  bool Mainloop = true;
-  bool Optionsloop = true;
+  std::string menuInput;
+  std::string optionsInput;
+  bool mainMenuLoop = true;
+  bool optionsMenuLoop = true;
 
-  loadoptions();
+  loadOptions();
 
-  cout << "Welcome to CMD4X." << endl;
+  std::cout << "Welcome to CMD4X." << std::endl;
 
-  while (Mainloop == true)
+  while (mainMenuLoop == true)
   {
-    cout << "new - Start a new game." << endl;
-    cout << "load - Load a saved game." << endl;
-    cout << "options - Open the options menu." << endl;
-    cout << "exit - Exit the game." << endl;
-    cout << "> ";
-    cin >> Mopt;
+    std::cout << "new - Start a new game." << std::endl;
+    std::cout << "load - Load a saved game." << std::endl;
+    std::cout << "options - Open the options menu." << std::endl;
+    std::cout << "exit - Exit the game." << std::endl;
+    std::cout << "> ";
+    std::cin >> menuInput;
 
-    if (Mopt == "new")
+    if (menuInput == "new")
       {
-        cout << "Please enter a username:" << endl;
+        std::cout << "Please enter a userName:" << std::endl;
 
-        cout << "> ";
-        cin >> Username;
+        std::cout << "> ";
+        std::cin >> userName;
 
-        cout << "Please enter a save name for this game:" << endl;
-        cout << "> ";
-        cin >> Gamename;
+        std::cout << "Please enter a save name for this game:" << std::endl;
+        std::cout << "> ";
+        std::cin >> gameName;
 
-        save(Gamename);
+        save(gameName);
 
-        gameloop();
+        gameLoop();
       }
-    else if (Mopt == "load")
+    else if (menuInput == "load")
       {
-        cout << "Please enter the save file name you would like to load:" << endl;
-        cout << "> ";
-        cin >> Gamename;
+        std::cout << "Please enter the save file name you would like to load:" << std::endl;
+        std::cout << "> ";
+        std::cin >> gameName;
 
-        load(Gamename);
+        load(gameName);
 
-        gameloop();
+        gameLoop();
       }
-    else if (Mopt == "options")
+    else if (menuInput == "options")
       {
-        if (Debug == 1)
+        if (debug == 1)
         {
-          cout << "Debug options enabled. Type debug to enter debug menu." << endl;
+          std::cout << "Debug options enabled. Type debug to enter debug menu." << std::endl;
         }
 
-        cout << "save - Save options to the config file." << endl;
-        cout << "exit - Exit the options menu." << endl;
+        std::cout << "save - Save options to the config file." << std::endl;
+        std::cout << "exit - Exit the options menu." << std::endl;
 
-        while (Optionsloop == true)
+        while (optionsMenuLoop == true)
         {
-          cout << "> ";
-          cin >> Oopt;
+          std::cout << "> ";
+          std::cin >> optionsInput;
 
-          if (Oopt == "save")
+          if (optionsInput == "save")
           {
-            saveoptions();
+            saveOptions();
           }
 
-          else if (Oopt == "debug")
+          else if (optionsInput == "debug")
           {
-            cout << "Debug menu." << endl;
+            std::cout << "Debug menu." << std::endl;
           }
-          else if (Oopt == "exit")
+          else if (optionsInput == "exit")
           {
-            Optionsloop = false;
+            optionsMenuLoop = false;
           }
         }
       }
-    else if (Mopt == "exit")
+    else if (menuInput == "exit")
       {
-        cout << "Exiting..." << endl;
+        std::cout << "Exiting..." << std::endl;
 
-        Mainloop = false;
+        mainMenuLoop = false;
       }
   }
 }

@@ -14,114 +14,114 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2022 Peter Wright
+// Copyright (C) 2014 - 2024 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
 #include "global.h"
 
-void gameloop()
+void gameLoop()
 {
-  bool Sgameloop = true;
-  bool Soptionsloop = true;
-  string Gopt1;
-  string Oopt1;
+  bool gameLoop = true;
+  bool optionsLoop = true;
+  std::string gameInput;
+  std::string optionsInput;
 
-  cout << "Starting game..." << endl;
+  std::cout << "Starting game..." << std::endl;
 
-  cout << "mil / military - Manage military." << endl;
-  cout << "dip / diplomacy - Manage diplomacy." << endl;
-  cout << "man / manufacturing - Manage manufacturing" << endl;
-  cout << "res / research - Manage Research." << endl;
-  cout << "map - View map." << endl;
-  cout << "sta / status - View status and progress overview." << endl;
-  cout << "opt / options - Go to the options menu." << endl;
-  cout << "end - End turn." <<endl;
+  std::cout << "mil / military - Manage military." << std::endl;
+  std::cout << "dip / diplomacy - Manage diplomacy." << std::endl;
+  std::cout << "man / manufacturing - Manage manufacturing" << std::endl;
+  std::cout << "res / research - Manage Research." << std::endl;
+  std::cout << "map - View map." << std::endl;
+  std::cout << "sta / status - View status and progress overview." << std::endl;
+  std::cout << "opt / options - Go to the options menu." << std::endl;
+  std::cout << "end - End turn." <<std::endl;
 
-  while (Sgameloop == true)
+  while (gameLoop == true)
   {
-    cout << "> ";
-    cin >> Gopt1;
+    std::cout << "> ";
+    std::cin >> gameInput;
 
-    if (Gopt1 == "mil" || Gopt1 == "military")
+    if (gameInput == "mil" || gameInput == "military")
       {
-        cout << "Test." << endl;
+        std::cout << "Test." << std::endl;
       }
 
-    else if (Gopt1 == "dip" || Gopt1 == "diplomacy")
+    else if (gameInput == "dip" || gameInput == "diplomacy")
       {
-        cout << "Test." << endl;
+        std::cout << "Test." << std::endl;
       }
-    else if (Gopt1 == "man" || Gopt1 == "manufacturing")
+    else if (gameInput == "man" || gameInput == "manufacturing")
       {
-        cout << "Test." << endl;
-      }
-
-    else if (Gopt1 == "res" || Gopt1 == "research")
-      {
-        cout << "Test." << endl;
+        std::cout << "Test." << std::endl;
       }
 
-    else if (Gopt1 == "map" || Gopt1 == "map")
+    else if (gameInput == "res" || gameInput == "research")
       {
-        cout << "Test." << endl;
+        std::cout << "Test." << std::endl;
       }
 
-    else if (Gopt1 == "sta" || Gopt1 == "status")
+    else if (gameInput == "map" || gameInput == "map")
       {
-        cout << "Test." << endl;
+        std::cout << "Test." << std::endl;
       }
 
-    else if (Gopt1 == "opt" || Gopt1 == "options")
+    else if (gameInput == "sta" || gameInput == "status")
       {
-        cout << "Options menu." << endl;
+        std::cout << "Test." << std::endl;
+      }
 
-        cout << "load - Load a saved game." << endl;
-        cout << "save - Save game." << endl;
-        cout << "set / settings - Go to settings menu." << endl;
-        cout << "back - Return to game." << endl;
-        cout << "exit - Exit the game." << endl;
+    else if (gameInput == "opt" || gameInput == "options")
+      {
+        std::cout << "Options menu." << std::endl;
 
-        Soptionsloop = true;
+        std::cout << "load - Load a saved game." << std::endl;
+        std::cout << "save - Save game." << std::endl;
+        std::cout << "set / settings - Go to settings menu." << std::endl;
+        std::cout << "back - Return to game." << std::endl;
+        std::cout << "exit - Exit the game." << std::endl;
 
-        while (Soptionsloop == true)
+        optionsLoop = true;
+
+        while (optionsLoop == true)
         {
-          cout << "> ";
-          cin >> Oopt1;
+          std::cout << "> ";
+          std::cin >> optionsInput;
 
-          if (Oopt1 == "load")
+          if (optionsInput == "load")
             {
-              cout << "Load game..." << endl;
+              std::cout << "Load game..." << std::endl;
             }
 
-          else if (Oopt1 == "save")
+          else if (optionsInput == "save")
             {
-              cout << "Save game..." << endl;
+              std::cout << "Save game..." << std::endl;
             }
 
-          else if (Oopt1 == "set" || Gopt1 == "settings")
+          else if (optionsInput == "set" || gameInput == "settings")
             {
-              cout << "Some options go here..." << endl;
+              std::cout << "Some options go here..." << std::endl;
             }
 
-          else if (Oopt1 == "back")
+          else if (optionsInput == "back")
             {
-              Soptionsloop = false;
+              optionsLoop = false;
             }
 
-          else if (Oopt1 == "exit")
+          else if (optionsInput == "exit")
             {
-              Soptionsloop = false;
+              optionsLoop = false;
 
-              Sgameloop = false;
+              gameLoop = false;
             }
         }
       }
-    else if (Gopt1 == "end")
+    else if (gameInput == "end")
     {
-      cout << "Turn ended." << endl;
+      std::cout << "turn ended." << std::endl;
 
-      Turn++;
+      turn++;
     }
   }
 }

@@ -14,36 +14,37 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2022 Peter Wright
+// Copyright (C) 2014 - 2024 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
+#include <fstream>
 #include "global.h"
 
-void load(string SaveFileName)
+void load(std::string saveFileName)
 {
-  string LoadLine;
-  int LineNumber = 1;
+  std::string loadLine;
+  int lineNumber = 1;
 
-  ifstream LoadFile(SaveFileName, ios::in);
+  std::ifstream LoadFile(saveFileName, std::ios::in);
 
   if (LoadFile.is_open())
   {
-    for (; LineNumber < 2; LineNumber++)
+    for (; lineNumber < 2; lineNumber++)
     {
-      getline(LoadFile, LoadLine);
+      std::getline(LoadFile, loadLine);
 
-      switch (LineNumber)
+      switch (lineNumber)
       {
         case 1:
         {
-          Username = LoadLine;
+          userName = loadLine;
 
           break;
         }
         case 2:
         {
-          Turn = stoi(LoadLine);
+          turn = std::stoi(loadLine);
 
           break;
         }
@@ -53,6 +54,6 @@ void load(string SaveFileName)
   }
   else
   {
-    cout << "Error: Unable to load save game file." << endl;
+    std::cout << "Error: Unable to load save game file." << std::endl;
   }
 }

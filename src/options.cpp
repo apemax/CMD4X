@@ -14,62 +14,61 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2022 Peter Wright
+// Copyright (C) 2014 - 2024 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
+#include <fstream>
 #include "global.h"
-using namespace std;
 
-void loadoptions()
+void loadOptions()
 {
-  string File_contents;
-  string LoadLine;
-  int i = 1;
+  std::string loadLine;
+  int lineNumber = 1;
 
-  ifstream cfg_file("options.cfg", ios::in);
+  std::ifstream ConfigFile("options.cfg", std::ios::in);
 
-  cout << "Loading options from file... " << endl;
+  std::cout << "Loading options from file... " << std::endl;
 
-  if (cfg_file.is_open())
+  if (ConfigFile.is_open())
   {
-    for (; i < 2; i++)
+    for (; lineNumber < 2; lineNumber++)
     {
-      getline(cfg_file, LoadLine);
+      std::getline(ConfigFile, loadLine);
 
-      switch(i)
+      switch(lineNumber)
       {
         case 1:
         {
-          Debug = stoi(LoadLine.substr(6, 1));
+          debug = std::stoi(loadLine.substr(6, 1));
 
           break;
         }
       }
     }
 
-    cfg_file.close();
+    ConfigFile.close();
   }
   else
   {
-    cout << "Failed to open file." << endl;
+    std::cout << "Failed to open file." << std::endl;
   }
 }
 
-void saveoptions()
+void saveOptions()
 {
-  ofstream cfg_file("options.cfg", ios::out | ios::trunc);
+  std::ofstream ConfigFile("options.cfg", std::ios::out | std::ios::trunc);
 
-  if (cfg_file.is_open())
+  if (ConfigFile.is_open())
   {
-    cfg_file << "debug=" << Debug << endl;
+    ConfigFile << "debug=" << debug << std::endl;
 
-    cfg_file.close();
+    ConfigFile.close();
 
-    cout << "Options saved." << endl;
+    std::cout << "Options saved." << std::endl;
   }
   else
   {
-    cout << "Failed to open config file." << endl;
+    std::cout << "Failed to open config file." << std::endl;
   }
 }

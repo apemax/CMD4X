@@ -14,14 +14,13 @@
     You should have received a copy of the GNU General Public License
     along with CMD4X.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Copyright (C) 2014 - 2022 Peter Wright
+// Copyright (C) 2014 - 2024 Peter Wright
 // author: Peter (apemax) Wright
 // CMD4X
 
 #include "global.h"
-using namespace std;
 
-int Debug = 0;
-int Turn = 1;
-string Username;
-string Gamename;
+int debug = 0;
+int turn = 1;
+std::string userName;
+std::string gameName;
