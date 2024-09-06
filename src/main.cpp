@@ -49,9 +49,9 @@ int main()
 
         std::cout << "Please enter a save name for this game:" << std::endl;
         std::cout << "> ";
-        std::cin >> gameName;
+        std::cin >> saveName;
 
-        save(gameName);
+        save(saveName);
 
         gameLoop();
       }
@@ -59,9 +59,9 @@ int main()
       {
         std::cout << "Please enter the save file name you would like to load:" << std::endl;
         std::cout << "> ";
-        std::cin >> gameName;
+        std::cin >> saveName;
 
-        load(gameName);
+        load(saveName);
 
         gameLoop();
       }

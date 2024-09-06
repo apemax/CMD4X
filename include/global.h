@@ -28,7 +28,7 @@
 extern int debug;
 extern int turn;
 extern std::string userName;
-extern std::string gameName;
+extern std::string saveName;
 
 void loadOptions();
 void saveOptions();

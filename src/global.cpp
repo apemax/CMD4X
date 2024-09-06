@@ -23,4 +23,4 @@
 int debug = 0;
 int turn = 1;
 std::string userName;
-std::string gameName;
+std::string saveName;
