@@ -22,5 +22,6 @@
 
 int debug = 0;
 int turn = 1;
+bool newGame = true;
 std::string userName;
 std::string saveName;

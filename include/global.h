@@ -27,6 +27,7 @@
 
 extern int debug;
 extern int turn;
+extern bool newGame;
 extern std::string userName;
 extern std::string saveName;
 

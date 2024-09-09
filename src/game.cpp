@@ -24,8 +24,35 @@ void gameLoop()
 {
   bool gameLoop = true;
   bool optionsLoop = true;
+  bool firstStart = true;
   std::string gameInput;
   std::string optionsInput;
+
+  if (newGame == false && firstStart == true)
+  {
+    std::cout << "Please enter the save file name you would like to load:" << std::endl;
+    std::cout << "> ";
+    std::cin >> saveName;
+
+    load(saveName);
+
+    firstStart = false;
+  }
+  else if (newGame == true && firstStart == true)
+  {
+    std::cout << "Please enter a userName:" << std::endl;
+
+    std::cout << "> ";
+    std::cin >> userName;
+
+    std::cout << "Please enter a save name for this game:" << std::endl;
+    std::cout << "> ";
+    std::cin >> saveName;
+
+    save(saveName);
+
+    firstStart = false;
+  }
 
   std::cout << "Starting game..." << std::endl;
 

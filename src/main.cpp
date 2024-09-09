@@ -42,28 +42,15 @@ int main()
 
     if (menuInput == "new")
       {
-        std::cout << "Please enter a userName:" << std::endl;
-
-        std::cout << "> ";
-        std::cin >> userName;
-
-        std::cout << "Please enter a save name for this game:" << std::endl;
-        std::cout << "> ";
-        std::cin >> saveName;
-
-        save(saveName);
-
         gameLoop();
+
+        newGame = true;
       }
     else if (menuInput == "load")
       {
-        std::cout << "Please enter the save file name you would like to load:" << std::endl;
-        std::cout << "> ";
-        std::cin >> saveName;
-
-        load(saveName);
-
         gameLoop();
+
+        newGame = false;
       }
     else if (menuInput == "options")
       {
