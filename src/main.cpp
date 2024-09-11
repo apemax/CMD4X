@@ -38,19 +38,19 @@ int main()
     std::cout << "options - Open the options menu." << std::endl;
     std::cout << "exit - Exit the game." << std::endl;
     std::cout << "> ";
-    std::cin >> menuInput;
+    std::getline(std::cin, menuInput);
 
     if (menuInput == "new")
       {
-        gameLoop();
-
         newGame = true;
+
+        gameLoop();
       }
     else if (menuInput == "load")
       {
-        gameLoop();
-
         newGame = false;
+
+        gameLoop();
       }
     else if (menuInput == "options")
       {

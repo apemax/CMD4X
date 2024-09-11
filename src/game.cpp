@@ -19,6 +19,7 @@
 // CMD4X
 
 #include "global.h"
+#include "faction.h"
 
 void gameLoop()
 {
@@ -32,7 +33,7 @@ void gameLoop()
   {
     std::cout << "Please enter the save file name you would like to load:" << std::endl;
     std::cout << "> ";
-    std::cin >> saveName;
+    std::getline(std::cin, saveName);
 
     load(saveName);
 
@@ -40,14 +41,19 @@ void gameLoop()
   }
   else if (newGame == true && firstStart == true)
   {
-    std::cout << "Please enter a userName:" << std::endl;
+    std::cout << "Please enter a  Ruler Name:" << std::endl;
 
     std::cout << "> ";
-    std::cin >> userName;
+    std::getline(std::cin, player.rulerName);
+
+    std::cout << "Please enter a Faction Name:" << std::endl;
+
+    std::cout << "> ";
+    std::getline(std::cin, player.factionName);
 
     std::cout << "Please enter a save name for this game:" << std::endl;
     std::cout << "> ";
-    std::cin >> saveName;
+    std::getline(std::cin, saveName);
 
     save(saveName);
 
@@ -96,7 +102,8 @@ void gameLoop()
 
     else if (gameInput == "sta" || gameInput == "status")
       {
-        std::cout << "Test." << std::endl;
+        std::cout << "Ruler Name: " << player.rulerName << " Faction Name: " << player.factionName;
+        std::cout << " Home System: " << player.homeSystem << std::endl;
       }
 
     else if (gameInput == "opt" || gameInput == "options")

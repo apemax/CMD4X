@@ -18,22 +18,35 @@
 // author: Peter (apemax) Wright
 // CMD4X
 
-#include <iostream>
-#include <sstream>
-#include <string>
+#include <stdlib.h>
+#include <time.h>
+#include "faction.h"
 
-#ifndef GLOBAL_H
-#define GLOBAL_H
 
-extern int debug;
-extern int turn;
-extern bool newGame;
-extern std::string saveName;
+Faction::Faction()
+{
+  int value = 0;
+  int systemNumber = 1;
+  int homeSystemX, homeSystemY;
+  std::string systemName = "System";
+  std::string systemNameNumber;
 
-void loadOptions();
-void saveOptions();
-void gameLoop();
-void save(std::string saveFileName);
-void load(std::string saveFileName);
+  for (int x = 0; x < 16; x++)
+  {
+    for (int y = 0; y < 16; y++)
+    {
+      systemNameNumber = systemName + std::to_string(systemNumber);
 
-#endif // GLOBAL_H
+      mapSystems[x][y][value] = systemNameNumber;
+
+      systemNumber++;
+    }
+  }
+
+  srand (time(NULL));
+
+  homeSystemX = rand() % 16;
+  homeSystemY = rand() % 16;
+
+  homeSystem = mapSystems[homeSystemX][homeSystemY][value];
+}

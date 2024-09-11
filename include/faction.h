@@ -18,22 +18,22 @@
 // author: Peter (apemax) Wright
 // CMD4X
 
-#include <iostream>
-#include <sstream>
 #include <string>
 
-#ifndef GLOBAL_H
-#define GLOBAL_H
+#ifndef FACTION_H
+#define FACTION_H
 
-extern int debug;
-extern int turn;
-extern bool newGame;
-extern std::string saveName;
+class Faction
+{
+  public:
+    std::string factionName;
+    std::string rulerName;
+    std::string homeSystem;
+    std::string mapSystems[16][16][2];
 
-void loadOptions();
-void saveOptions();
-void gameLoop();
-void save(std::string saveFileName);
-void load(std::string saveFileName);
+    Faction();
+};
 
-#endif // GLOBAL_H
+extern Faction player;
+
+#endif //FACTION_H

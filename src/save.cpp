@@ -20,6 +20,7 @@
 
 #include <fstream>
 #include "global.h"
+#include "faction.h"
 
 void save(std::string saveFileName)
 {
@@ -27,8 +28,10 @@ void save(std::string saveFileName)
 
   if (SaveFile.is_open())
   {
-    SaveFile << userName << std::endl;
     SaveFile << turn << std::endl;
+    SaveFile << player.rulerName << std::endl;
+    SaveFile << player.factionName << std::endl;
+    SaveFile << player.homeSystem << std::endl;
 
     SaveFile.close();
   }

@@ -20,6 +20,7 @@
 
 #include <fstream>
 #include "global.h"
+#include "faction.h"
 
 void load(std::string saveFileName)
 {
@@ -38,13 +39,25 @@ void load(std::string saveFileName)
       {
         case 1:
         {
-          userName = loadLine;
+          turn = std::stoi(loadLine);
 
           break;
         }
         case 2:
         {
-          turn = std::stoi(loadLine);
+          player.rulerName = loadLine;
+
+          break;
+        }
+        case 3:
+        {
+          player.factionName = loadLine;
+
+          break;
+        }
+        case 4:
+        {
+          player.homeSystem = loadLine;
 
           break;
         }
