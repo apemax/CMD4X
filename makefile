@@ -11,7 +11,7 @@ CXXFLAGS = -I$(IDIR) -no-pie -Werror -Wall -Wextra
 _DEPS = global.h faction.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o game.o global.o load.o options.o save.o faction.o
+_OBJ = main.o game.o global.o load.o options.o save.o faction.o map.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 .SECONDEXPANSION:

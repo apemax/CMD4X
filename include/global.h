@@ -30,6 +30,7 @@ extern int turn;
 extern bool newGame;
 extern std::string saveName;
 
+void map(std::string mapInput);
 void loadOptions();
 void saveOptions();
 void gameLoop();

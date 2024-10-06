@@ -73,8 +73,13 @@ void gameLoop()
 
   while (gameLoop == true)
   {
+    std::string gameInputOption;
     std::cout << "> ";
-    std::cin >> gameInput;
+    std::getline(std::cin, gameInput);
+
+    std::istringstream gameInputStream(gameInput);
+
+    gameInputStream >> gameInputOption;
 
     if (gameInput == "mil" || gameInput == "military")
       {
@@ -95,15 +100,15 @@ void gameLoop()
         std::cout << "Test." << std::endl;
       }
 
-    else if (gameInput == "map" || gameInput == "map")
+    else if (gameInputOption == "map" || gameInputOption == "map")
       {
-        std::cout << "Test." << std::endl;
+        map(gameInput);
       }
 
     else if (gameInput == "sta" || gameInput == "status")
       {
         std::cout << "Ruler Name: " << player.rulerName << " Faction Name: " << player.factionName;
-        std::cout << " Home System: " << player.homeSystem << std::endl;
+        std::cout << " Home System: " << player.homeSystem << ", " << player.homeSystemX << ", " << player.homeSystemY << std::endl;
       }
 
     else if (gameInput == "opt" || gameInput == "options")
@@ -121,7 +126,7 @@ void gameLoop()
         while (optionsLoop == true)
         {
           std::cout << "> ";
-          std::cin >> optionsInput;
+          std::getline(std::cin, optionsInput);
 
           if (optionsInput == "load")
             {

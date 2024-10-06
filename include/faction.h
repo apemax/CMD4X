@@ -26,6 +26,7 @@
 class Faction
 {
   public:
+    int homeSystemX, homeSystemY;
     std::string factionName;
     std::string rulerName;
     std::string homeSystem;

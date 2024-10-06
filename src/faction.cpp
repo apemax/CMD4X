@@ -27,7 +27,6 @@ Faction::Faction()
 {
   int value = 0;
   int systemNumber = 1;
-  int homeSystemX, homeSystemY;
   std::string systemName = "System";
   std::string systemNameNumber;
 
